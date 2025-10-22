@@ -75,8 +75,6 @@ ngd_project/
 │ └─ create_neo4j_user_post.cql
 └─ report_outline.md
 
-yaml
-Copy code
 
 ---
 
@@ -120,8 +118,7 @@ Copy code
 python app.py --demo
 You’ll see output like:
 
-sql
-Copy code
+
 === Simulate Flow ===
 Creating user U1...
 Creating post P1...
@@ -133,7 +130,7 @@ User posts from graph: [...]
 Start the backend server:
 
 bash
-Copy code
+
 python app.py
 🔗 Example API Endpoints
 Action	Method	Endpoint	Description
@@ -147,21 +144,21 @@ Get User Posts	GET	/user_posts/<user_id>	Retrieve posts from a user
 Create a User
 
 bash
-Copy code
+
 curl -X POST -H "Content-Type: application/json" \
 -d '{"user_id":"U1","name":"Alice"}' \
 http://localhost:5000/create_user
 Create a Post
 
 bash
-Copy code
+
 curl -X POST -H "Content-Type: application/json" \
 -d '{"post_id":"P1","user_id":"U1","content":"Hello world!", "hashtags":["#intro"]}' \
 http://localhost:5000/create_post
 View Top Trending Posts
 
 bash
-Copy code
+
 curl http://localhost:5000/top_trending
 🧰 Troubleshooting
 Issue	Possible Fix
@@ -196,3 +193,4 @@ By combining MongoDB, Redis, Cassandra, and Neo4j, it achieves:
 🔗 Graph insights
 
 Ideal for modern, data-driven applications that demand speed, scalability, and smart insights.
+
