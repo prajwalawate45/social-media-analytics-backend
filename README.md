@@ -1,6 +1,8 @@
 # 🌐 Social Media Analytics Backend using NoSQL Databases
 
-A **Python Flask-based backend system** that demonstrates how multiple **NoSQL databases** — **MongoDB**, **Redis**, **Cassandra**, and **Neo4j** — can work together to power a scalable, data-driven **Social Media Analytics Platform**.
+A **Python Flask-based backend system** that demonstrates how multiple **NoSQL databases** — **MongoDB**, **Redis**, **Cassandra**, and **Neo4j**
+
+— can work together to power a scalable, data-driven **Social Media Analytics Platform**.
 
 ---
 
@@ -52,29 +54,27 @@ Copy code
 | **Cassandra** | 📈 Time-Series Logs | Efficiently stores and retrieves event logs (likes, posts, etc.). |
 | **Neo4j** | 🔗 Graph Relationships | Models user, post, and hashtag relationships for analytics. |
 
-🖼️ *(Add your generated architecture diagram here once uploaded to GitHub)*
-
 ---
 
-## 📁 Project Structure
-
+📁 Project Structure
 ngd_project/
-├─ README.md
-├─ requirements.txt
-├─ .env.example
-├─ run_demo.sh
-├─ app.py
-├─ config.py
-├─ modules/
-│ ├─ mongodb_client.py
-│ ├─ redis_client.py
-│ ├─ cassandra_client.py
-│ └─ neo4j_client.py
-├─ scripts/
-│ ├─ init_cassandra.cql
-│ └─ create_neo4j_user_post.cql
-└─ report_outline.md
-
+├── README.md
+├── requirements.txt
+├── .env.example
+├── run_demo.sh
+├── app.py
+├── config.py
+├── report_outline.md
+│
+├── modules/
+│   ├── mongodb_client.py
+│   ├── redis_client.py
+│   ├── cassandra_client.py
+│   └── neo4j_client.py
+│
+└── scripts/
+    ├── init_cassandra.cql
+    └── create_neo4j_user_post.cql
 
 ---
 
@@ -96,8 +96,8 @@ Ensure the following are installed:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ngd_project.git
-cd ngd_project
+git clone https://github.com/prajwalawate45/social-media-analytics-backend.git
+cd social media analytics backend
 
 # Create and activate virtual environment
 python3 -m venv .venv
@@ -193,4 +193,5 @@ By combining MongoDB, Redis, Cassandra, and Neo4j, it achieves:
 🔗 Graph insights
 
 Ideal for modern, data-driven applications that demand speed, scalability, and smart insights.
+
 
