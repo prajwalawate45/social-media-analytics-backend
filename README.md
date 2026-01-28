@@ -31,32 +31,32 @@ It showcases **polyglot persistence**, where each database is used for what it d
 
 ## 🏗️ Architecture
 
-### 🔄 Flow Overview
-
-[User / UI]
-↓
+🔄 Flow Overview
+~~~
+User / UI
+   ↓
 Flask REST API (app.py)
-|
-| | | |
-MongoDB Redis Cassandra Neo4j
-(users, (cache, (post_events, (graph -
-posts) trending) timeseries) relationships)
+   ↓
+Data Layer
+   ├── MongoDB      → User data
+   ├── Redis        → Caching & trending data
+   ├── Cassandra    → Time-series post events
+   └── Neo4j        → User–post relationships (graph)
 
-yaml
-Copy code
+~~~
 
 ### 💡 Database Roles
 
-| Database  | Role | Description |
-|------------|------|-------------|
-| **MongoDB** | 🗃️ Flexible Storage | Stores user profiles and posts as JSON-like documents. |
-| **Redis** | ⚡ In-Memory Cache | Maintains cached posts and trending counters with high speed. |
-| **Cassandra** | 📈 Time-Series Logs | Efficiently stores and retrieves event logs (likes, posts, etc.). |
-| **Neo4j** | 🔗 Graph Relationships | Models user, post, and hashtag relationships for analytics. |
+| Database       |         Role              |                 Description                                      |
+|----------------|---------------------------|------------------------------------------------------------------|
+| **MongoDB**    | 🗃️ Flexible Storage      | Stores user profiles and posts as JSON-like documents.            |
+| **Redis**      | ⚡ In-Memory Cache       | Maintains cached posts and trending counters with high speed.     |
+| **Cassandra**  | 📈 Time-Series Logs      | Efficiently stores and retrieves event logs (likes, posts, etc.). |
+| **Neo4j**      | 🔗 Graph Relationships   | Models user, post, and hashtag relationships for analytics.       |
 
----
+## 📁 Project Structure
 
-📁 Project Structure
+```bash
 ngd_project/
 ├── README.md
 ├── requirements.txt
@@ -75,7 +75,6 @@ ngd_project/
 └── scripts/
     ├── init_cassandra.cql
     └── create_neo4j_user_post.cql
-
 ---
 
 ## ⚙️ Setup Instructions
@@ -114,7 +113,7 @@ cp .env.example .env
 Run the demo script to test full integration:
 
 bash
-Copy code
+
 python app.py --demo
 You’ll see output like:
 
@@ -133,12 +132,12 @@ bash
 
 python app.py
 🔗 Example API Endpoints
-Action	Method	Endpoint	Description
-Create User	POST	/create_user	Create a new user
-Create Post	POST	/create_post	Add a post by a user
-Like Post	POST	/like_post	Like an existing post
-Top Trending	GET	/top_trending	View trending posts
-Get User Posts	GET	/user_posts/<user_id>	Retrieve posts from a user
+Action	    Method           	Endpoint	                    Description
+Create       User	      POST    /create_user	          --Create a new user
+Create       Post         POST    /create_post	          --Add a post by a user
+Like         Post	      POST    /like_post	          --Like an existing post
+Top          rending	  GET	/top_trending             --View trending posts
+Get         User Posts	  GET	/user_posts/<user_id>     --Retrieve posts from a user
 
 🧪 Example Usage (via curl)
 Create a User
@@ -193,5 +192,6 @@ By combining MongoDB, Redis, Cassandra, and Neo4j, it achieves:
 🔗 Graph insights
 
 Ideal for modern, data-driven applications that demand speed, scalability, and smart insights.
+
 
 
